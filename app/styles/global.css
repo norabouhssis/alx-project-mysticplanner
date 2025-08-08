@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+   {
+    font-family: "LobsterTwo";
+    src: url("/fonts/LobsterTwo/LobsterTwo-Bold.otf") format("otf");
+    font-weight: 700;
+    font-style: normal;
+  }
+   {
+    font-family: "LobsterTwo";
+    src: url("/fonts/LobsterTwo/LobsterTwo-Regular.otf") format("otf");
+    font-weight: 400;
+    font-style: normal;
+  }
+   {
+    font-family: "DegularDemo";
+    src: url("/fonts/DegularDemo/DegularDemo-Bold.otf") format("otf");
+    font-weight: 700;
+    font-style: normal;
+  }
+   {
+    font-family: "DegularDemo";
+    src: url("/fonts/DegularDemo/DegularDemo-Regular.otf") format("otf");
+    font-weight: 400;
+    font-style: normal;
+  }
+   {
+    font-family: "DegularDemo";
+    src: url("/fonts/DegularDemo/DegularDemo-Medium.otf") format("otf");
+    font-weight: 500;
+    font-style: normal;
+  }
+   {
+    font-family: "DegularDemo";
+    src: url("/fonts/DegularDemo/DegularDemo-Semibold.otf") format("otf");
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+
+/* Typography */
+/* === Titles === */
+.text-display {
+  @apply text-display font-bold font-title;
+}
+
+.text-title {
+  @apply text-title font-bold font-title;
+}
+
+.text-subtitle {
+  @apply text-subtitle font-bold font-title;
+}
+
+/* === Headings === */
+.text-heading {
+  @apply text-heading font-bold font-title;
+}
+
+.text-subheading {
+  @apply text-subheading font-bold font-title;
+}
+
+/* === Body === */
+.text-body {
+  @apply text-body font-medium font-body;
+}
+
+.text-body-bold {
+  @apply text-body font-bold font-body;
+}
+
+.text-body-medium {
+  @apply text-body-medium font-medium font-body;
+}
+
+.text-body-medium-bold {
+  @apply text-body-medium font-bold font-body;
+}
+
+.text-body-small {
+  @apply text-body-small font-medium font-body;
+}
+
+.text-body-small-bold {
+  @apply text-body-small font-bold font-body;
+}
+
+.text-caption {
+  @apply text-caption font-medium font-body;
+}
+
+/* Header */
+.headerGradient {
+  background: conic-gradient(
+    from -84deg at 50.13% 285.9%,
+    #f8e4fc 28.8deg,
+    #e4f5fc 140.4deg,
+    #faf7ea 227.32deg,
+    #e5faf9 327.6deg
+  );
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-purple-500 text-white font-bold px-6 py-2 rounded-lg hover:bg-purple-600 transition;
+}
+.btn-outline {
+  @apply border border-purple-500 text-purple-500 font-medium px-6 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition;
+}
