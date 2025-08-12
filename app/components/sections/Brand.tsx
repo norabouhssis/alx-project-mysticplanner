@@ -1,39 +1,26 @@
 "use client";
 import React from "react";
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import { Button } from "../Button";
+import { MapPin, HeartIcon } from "lucide-react";
 
 export default function Brand() {
   return (
-    <div className="flex flex-row content-center items-center justify-center gap-[32px] flex-wrap px-24 py-15">
-      <div className="flex flex-col items-start justify-center gap-[32px] min-w-109 flex-[1_0_0]">
-        <p className="text-display text-greyScaleText-title">
-          Discover the Joy of Planning
+    <div className="flex h-78 py-15 px-24 justify-center items-center content-center gap-x-20 gap-y-10 flex-wrap bg-primarySurface-darker w-full">
+      <div className="rounded-xl border-b-2 border-b-accent1Border-lighter bg-greyScaleSurface-subtle shadow-[0_12px_105px_12px_rgba(0,0,0,0.03)] flex px-12.5 py-5 flex-col justify-center items-center gap-[6px]">
+        <HeartIcon className="w-15 h-15" />
+        <p className="text-subtitle text-greyScaleText-title">Moroccan brand</p>
+        <p className="text-bodyMedium text-greyScaleText-body">
+          Every purchase helps our 100% Moroccan brand grow and shine
         </p>
-        <p className="text-subheading text-greyScaleText-body">
-          Our notebook planners blend elegance and functionality, empowering
-          your creativity and productivity while turning ideas into beautifully
-          organized plans
-        </p>
-        <Button
-          variant="type1"
-          color="accent1"
-          size="lg"
-          pill="true"
-          iconPosition="right"
-          label="Browse Our Planners"
-          Icon={<ChevronRight />}
-        />
       </div>
-      <div className="flex flex-col items-center justify-center h-[483px] px-[5px] min-w-109 w-[608px]">
-        <Image
-          src={"/assets/Hero.png"}
-          alt="Hero Image"
-          width={608}
-          height={483}
-          className="w-full h-auto"
-        />
+      <div className="rounded-xl border-b-2 border-b-accent1Border-lighter bg-greyScaleSurface-subtle shadow-[0_12px_105px_12px_rgba(0,0,0,0.03)] flex px-12.5 py-5 flex-col justify-center items-center gap-[6px]">
+        <MapPin className="w-15 h-15" />
+        <p className="text-subtitle text-greyScaleText-title">
+          Original products
+        </p>
+        <p className="text-bodyMedium text-greyScaleText-body">
+          We design and craft our products with love and the utmost care for
+          quality
+        </p>
       </div>
     </div>
   );
