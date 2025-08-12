@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import { LucideIcon } from "lucide-react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "type1" | "type2" | "type3";
@@ -16,7 +17,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   pill?: "true" | "false";
   iconPosition?: "alone" | "left" | "right" | "none";
   label?: string;
-  icon?: React.ReactNode;
+  Icon?: LucideIcon | React.ReactNode;
 }
 
 export const Button = ({
@@ -25,6 +26,8 @@ export const Button = ({
   size = "md",
   pill = "false",
   iconPosition = "none",
+  Icon,
+  label,
   className,
   ...props
 }: ButtonProps) => {
@@ -33,74 +36,78 @@ export const Button = ({
   const variants = {
     type1: {
       primary:
-        "text-greyScale-text-negative bg-primary-surface-default hover:bg-primary-surface-lighter focus:bg-primary-surface-darker",
+        "text-greyScaleText-negative bg-primarySurface hover:bg-primarySurface-lighter focus:bg-primarySurface-darker",
       accent1:
-        "text-greyScale-text-negative bg-accent1-surface-default hover:bg-accent1-surface-lighter focus:bg-accent1-surface-darker",
+        "text-greyScaleText-negative bg-accent1Surface hover:bg-accent1Surface-lighter focus:bg-accent1Surface-darker",
       accent2:
-        "text-greyScale-text-negative bg-accent2-surface-default hover:bg-accent2-surface-lighter focus:bg-accent2-surface-darker",
+        "text-greyScaleText-negative bg-accent2Surface hover:bg-accent2Surface-lighter focus:bg-accent2Surface-darker",
       success:
-        "text-greyScale-text-negative bg-success-surface-default hover:bg-success-surface-lighter focus:bg-success-surface-darker",
+        "text-greyScaleText-negative bg-successSurface hover:bg-successSurface-lighter focus:bg-successSurface-darker",
       error:
-        "text-greyScale-text-negative bg-error-surface-default hover:bg-error-surface-lighter focus:bg-error-surface-darker",
+        "text-greyScaleText-negative bg-errorSurface hover:bg-errorSurface-lighter focus:bg-errorSurface-darker",
       warning:
-        "text-greyScale-text-negative bg-warning-surface-default hover:bg-warning-surface-lighter focus:bg-warning-surface-darker",
-      info: "text-greyScale-text-negative bg-info-surface-default hover:bg-info-surface-lighter focus:bg-info-surface-darker",
+        "text-greyScaleText-negative bg-warningSurface hover:bg-warningSurface-lighter focus:bg-warningSurface-darker",
+      info: "text-greyScaleText-negative bg-infoSurface hover:bg-infoSurface-lighter focus:bg-infoSurface-darker",
     },
     type2: {
       primary:
-        "text-greyScale-text-title bg-greyScale-surface-subtle border border-primary-border-default border-[1px] hover:border-primary-border-darker focus:border-primary-border-darker focus:bg-primary-surface-subtle",
+        "text-greyScaleText-title bg-greyScaleSurface-subtle border border-primaryBorder border-[1px] hover:border-primaryBorder-darker focus:border-primaryBorder-darker focus:bg-primarySurface-subtle",
       accent1:
-        "text-greyScale-text-title bg-greyScale-surface-subtle border border-accent1-border-default border-[1px] hover:border-accent1-border-darker focus:border-accent1-border-darker focus:bg-accent1-surface-subtle",
+        "text-greyScaleText-title bg-greyScaleSurface-subtle border border-accent1Border border-[1px] hover:border-accent1Border-darker focus:border-accent1Border-darker focus:bg-accent1Surface-subtle",
       accent2:
-        "text-greyScale-text-title bg-greyScale-surface-subtle border border-accent2-border-default border-[1px] hover:border-accent2-border-darker focus:border-accent2-border-darker focus:bg-accent2-surface-subtle",
+        "text-greyScaleText-title bg-greyScaleSurface-subtle border border-accent2Border border-[1px] hover:border-accent2Border-darker focus:border-accent2Border-darker focus:bg-accent2Surface-subtle",
       success:
-        "text-greyScale-text-title bg-greyScale-surface-subtle border border-success-border-default border-[1px] hover:border-success-border-darker focus:border-success-border-darker focus:bg-success-surface-subtle",
+        "text-greyScaleText-title bg-greyScaleSurface-subtle border border-successBorder border-[1px] hover:border-successBorder-darker focus:border-successBorder-darker focus:bg-successSurface-subtle",
       error:
-        "text-greyScale-text-title bg-greyScale-surface-subtle border border-error-border-default border-[1px] hover:border-error-border-darker focus:border-error-border-darker focus:bg-error-surface-subtle",
+        "text-greyScaleText-title bg-greyScaleSurface-subtle border border-errorBorder border-[1px] hover:border-errorBorder-darker focus:border-errorBorder-darker focus:bg-errorSurface-subtle",
       warning:
-        "text-greyScale-text-title bg-greyScale-surface-subtle border border-warning-border-default border-[1px] hover:border-warning-border-darker focus:border-warning-border-darker focus:bg-warning-surface-subtle",
-      info: "text-greyScale-text-title bg-greyScale-surface-subtle border border-info-border-default border-[1px] hover:border-info-border-darker focus:border-info-border-darker focus:bg-info-surface-subtle",
+        "text-greyScaleText-title bg-greyScaleSurface-subtle border border-warningBorder border-[1px] hover:border-warningBorder-darker focus:border-warningBorder-darker focus:bg-warningSurface-subtle",
+      info: "text-greyScaleText-title bg-greyScaleSurface-subtle border border-infoBorder border-[1px] hover:border-infoBorder-darker focus:border-infoBorder-darker focus:bg-infoSurface-subtle",
     },
     type3: {
       primary:
-        "text-primary-text-default bg-greyScale-surface-default hover:bg-primary-surface-lighter hover:text-greyScale-text-negative focus:bg-primary-surface-darker focus:text-greyScale-text-negative",
+        "text-primaryText bg-greyScaleSurface hover:bg-primarySurface-lighter hover:text-greyScaleText-negative focus:bg-primarySurface-darker focus:text-greyScaleText-negative",
       accent1:
-        "text-accent1-text-default bg-greyScale-surface-default hover:bg-accent1-surface-lighter hover:text-greyScale-text-negative focus:bg-accent1-surface-darker focus:text-greyScale-text-negative",
+        "text-accent1Text bg-greyScaleSurface hover:bg-accent1Surface-lighter hover:text-greyScaleText-negative focus:bg-accent1Surface-darker focus:text-greyScaleText-negative",
       accent2:
-        "text-accent2-text-default bg-greyScale-surface-default hover:bg-accent2-surface-lighter hover:text-greyScale-text-negative focus:bg-accent2-surface-darker focus:text-greyScale-text-negative",
+        "text-accent2Text bg-greyScaleSurface hover:bg-accent2Surface-lighter hover:text-greyScaleText-negative focus:bg-accent2Surface-darker focus:text-greyScaleText-negative",
       success:
-        "text-success-text-default bg-greyScale-surface-default hover:bg-success-surface-lighter hover:text-greyScale-text-negative focus:bg-success-surface-darker focus:text-greyScale-text-negative",
+        "text-successText bg-greyScaleSurface hover:bg-successSurface-lighter hover:text-greyScaleText-negative focus:bg-successSurface-darker focus:text-greyScaleText-negative",
       error:
-        "text-error-text-default bg-greyScale-surface-default hover:bg-error-surface-lighter hover:text-greyScale-text-negative focus:bg-error-surface-darker focus:text-greyScale-text-negative",
+        "text-errorText bg-greyScaleSurface hover:bg-errorSurface-lighter hover:text-greyScaleText-negative focus:bg-errorSurface-darker focus:text-greyScaleText-negative",
       warning:
-        "text-warning-text-default bg-greyScale-surface-default hover:bg-warning-surface-lighter hover:text-greyScale-text-negative focus:bg-warning-surface-darker focus:text-greyScale-text-negative",
-      info: "text-info-text-default bg-greyScale-surface-default hover:bg-info-surface-lighter hover:text-greyScale-text-negative focus:bg-info-surface-darker focus:text-greyScale-text-negative",
+        "text-warningText bg-greyScaleSurface hover:bg-warningSurface-lighter hover:text-greyScaleText-negative focus:bg-warningSurface-darker focus:text-greyScaleText-negative",
+      info: "text-infoText bg-greyScaleSurface hover:bg-infoSurface-lighter hover:text-greyScaleText-negative focus:bg-infoSurface-darker focus:text-greyScaleText-negative",
     },
   };
   const sizes = {
     esm: {
-      classes: "px-2 py-1 flex items-center gap-0.5 text-body-small",
+      classes:
+        "px-2 py-1 flex items-center gap-0.5 text-body-small font-medium font-body",
       icon: "w-3 h-3",
       pillFalseRadius: "rounded-xs",
-      pillTrueRadius: "rounded-xl",
+      pillTrueRadius: "rounded-full",
     },
     sm: {
-      classes: "px-4 py-2 flex items-center gap-1 text-body-small",
+      classes:
+        "px-4 py-2 flex items-center gap-1 text-body-small font-medium font-body",
       icon: "w-4 h-4",
       pillFalseRadius: "rounded-s",
-      pillTrueRadius: "rounded-xl",
+      pillTrueRadius: "rounded-full",
     },
     md: {
-      classes: "px-5 py-3 flex items-center gap-2 text-body",
+      classes:
+        "px-5 py-3 flex items-center gap-2 text-body font-medium font-body",
       icon: "w-5 h-5",
       pillFalseRadius: "rounded-m",
-      pillTrueRadius: "rounded-xl",
+      pillTrueRadius: "rounded-full",
     },
     lg: {
-      classes: "px-6 py-4 flex items-center gap-3 text-subheading",
+      classes:
+        "px-6 py-4 flex items-center gap-3 text-subheading font-bold font-title",
       icon: "w-8 h-8",
       pillFalseRadius: "rounded-l",
-      pillTrueRadius: "rounded-xl",
+      pillTrueRadius: "rounded-full",
     },
   };
   const iconPositions = {
@@ -119,9 +126,13 @@ export const Button = ({
           ? sizes[size].pillTrueRadius
           : sizes[size].pillFalseRadius,
         iconPositions[iconPosition],
+        Icon,
         className
       )}
       {...props}
-    />
+    >
+      {typeof Icon === "function" ? <Icon /> : Icon}
+      {label}
+    </button>
   );
 };

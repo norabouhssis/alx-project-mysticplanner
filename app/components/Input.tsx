@@ -33,8 +33,8 @@ export default function InputField({
       {label && (
         <label
           className={cn(
-            "text-body-bold text-greyScale-text-body hover:text-primary-text-lighter focus:text-primary-text-default",
-            disabled && "text-greyScale-text-disabled cursor-not-allowed"
+            "text-body font-bold font-body text-greyScaleText-body hover:text-primaryText-lighter focus:text-primaryText",
+            disabled && "text-greyScaleText-disabled cursor-not-allowed"
           )}
         >
           {label}
@@ -43,14 +43,14 @@ export default function InputField({
 
       <div
         className={cn(
-          "flex items-center border gap-2 h-[52] border-[1px] rounded-m px-4 py-1 transition-colors bg-greyScale-surface-default border-greyScale-border-default hover:border-primary-border-lighter focus:border-primary-border-default",
+          "flex items-center gap-2 h-[52] border-[1px] rounded-m px-4 py-1 transition-colors bg-greyScaleSurface border-greyScaleBorder hover:border-primaryBorder-lighter focus:border-primaryBorder",
           disabled &&
-            "bg-greyScale-surface-disabled text-greyScale-text-disabled border-greyScale-border-disabled cursor-not-allowed",
+            "bg-greyScaleSurface-disabled text-greyScaleText-disabled border-greyScaleBorder-disabled cursor-not-allowed",
           error
-            ? "border-error-border-default bg-error-surface-subtle"
+            ? "border-errorBorder bg-errorSurface-subtle"
             : success
-            ? "border-primary-border-default"
-            : "border-greyScale-border-default"
+            ? "border-primaryBorder"
+            : "border-greyScaleBorder"
         )}
         style={{ minHeight: "51px" }}
       >
@@ -74,10 +74,10 @@ export default function InputField({
           className={cn(
             "text-xs mt-1",
             error
-              ? "text-red-500"
+              ? "text-errorText"
               : success
-              ? "text-green-500"
-              : "text-gray-500"
+              ? "text-successText"
+              : "text-greyScaleText"
           )}
         >
           {helperText}
