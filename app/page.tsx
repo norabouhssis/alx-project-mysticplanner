@@ -6,7 +6,6 @@ import Hero from "./components/sections/Hero";
 import Brand from "./components/sections/Brand";
 import Categories from "./components/sections/Categories";
 import Delivery from "./components/sections/Delivery";
-import BestSellers from "./components/sections/BestSellers";
 import SocialMedia from "./components/sections/SocialMedia";
 
 export default function Home() {
@@ -29,7 +28,6 @@ export default function Home() {
       <Brand />
       <Categories />
       <Delivery />
-      <BestSellers />
       <SocialMedia />
       <Footer />
     </div>

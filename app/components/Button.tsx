@@ -106,16 +106,13 @@ export const Button = ({
       classes:
         "px-6 py-4 flex items-center gap-3 text-subheading font-bold font-title",
       icon: "w-8 h-8",
-      pillFalseRadius: "rounded-l",
+      pillFalseRadius: "rounded-xl",
       pillTrueRadius: "rounded-full",
     },
   };
-  const iconPositions = {
-    alone: "flex items-center justify-center",
-    left: "flex items-center justify-start",
-    right: "flex items-center justify-end",
-    none: "",
-  };
+
+  const iconOnly = typeof Icon === "function" ? <Icon /> : Icon;
+
   return (
     <button
       className={clsx(
@@ -125,14 +122,25 @@ export const Button = ({
         pill === "true"
           ? sizes[size].pillTrueRadius
           : sizes[size].pillFalseRadius,
-        iconPositions[iconPosition],
         Icon,
         className
       )}
       {...props}
     >
-      {typeof Icon === "function" ? <Icon /> : Icon}
-      {label}
+      {iconPosition === "alone" && iconOnly}
+      {iconPosition === "left" && (
+        <>
+          {iconOnly}
+          {label}
+        </>
+      )}
+      {iconPosition === "right" && (
+        <>
+          {label}
+          {iconOnly}
+        </>
+      )}
+      {iconPosition === "none" && label}
     </button>
   );
 };
