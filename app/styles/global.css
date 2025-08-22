@@ -41,6 +41,13 @@
   .headerbackground {
     background: var(--background-headerGradient);
   }
+  .herobackground {
+    background: var(--background-heroGradient);
+  }
+
+  .boxshadow {
+    box-shadow: 0 2px 73px 2px rgba(0, 0, 0, 0.05);
+  }
 }
 
 @layer base {
@@ -216,7 +223,7 @@
 
   /* Border Radius */
   --border-radius-x: 0.125rem; /* 2px */
-  --border-radius-q: 0.25rem; /* 4px */
+  --border-radius-s: 0.25rem; /* 4px */
   --border-radius-m: 0.5rem; /* 8px */
   --border-radius-l: 0.75rem; /* 12px */
   --border-radius-xl: 1rem; /* 16px */
@@ -230,4 +237,16 @@
     #faf7ea 227.32deg,
     #e5faf9 327.6deg
   );
+
+  /* Hero Background */
+  --background-heroGradient: conic-gradient(
+    from 270deg at 50.13% 113.85%,
+    #f8e4fc 28.8deg,
+    #e4f5fc 140.4deg,
+    #faf7ea 237.6deg,
+    #e5faf9 327.6deg
+  );
+
+  /* Box shadow */
+  --box-shadow: 0 2px 73px 2px rgba(0, 0, 0, 0.05);
 }

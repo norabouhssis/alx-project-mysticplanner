@@ -2,19 +2,19 @@
 import React from "react";
 import { ChevronRight, MapPin, HeartIcon } from "lucide-react";
 import Image from "next/image";
-import { Button } from "./components/UI/Button";
-import CategoriesCard from "./components/Cards/CategoriesCard";
-import Facebook from "./assets/socialMedia/Facebook.svg";
-import FacebookHover from "./assets/socialMedia/FacebookHover.svg";
-import Twitter from "./assets/socialMedia/Twitter.svg";
-import Instagram from "./assets/socialMedia/Instagram.svg";
-import TwitterHover from "./assets/socialMedia/TwitterHover.svg";
-import InstagramHover from "./assets/socialMedia/InstagramHover.svg";
+import { Button } from "../components/UI/Button";
+import CategoriesCard from "../components/Cards/CategoriesCard";
+import Facebook from "../../assets/socialMedia/Facebook.svg";
+import FacebookHover from "../../assets/socialMedia/FacebookHover.svg";
+import Twitter from "../../assets/socialMedia/Twitter.svg";
+import Instagram from "../../assets/socialMedia/Instagram.svg";
+import TwitterHover from "../../assets/socialMedia/TwitterHover.svg";
+import InstagramHover from "../../assets/socialMedia/InstagramHover.svg";
 
 /* Hero section */
 const HeroSection = () => {
   return (
-    <div className="flex flex-row content-center items-center justify-center gap-[32px] flex-wrap px-24 py-15 herobackground w-full">
+    <div className="flex flex-row content-center items-center justify-center gap-[32px] flex-wrap px-24 py-15 herobackground">
       <div className="flex flex-col items-start justify-center gap-[32px] min-w-109 flex-[1_0_0]">
         <p className="text-display text-greyScaleText-title">
           Discover the Joy of Planning
@@ -105,7 +105,7 @@ const CategoriesSection = () => {
 /* Delivery section */
 const DeliverySection = () => {
   return (
-    <div className="flex flex-row content-center items-center justify-center gap-[32px] flex-wrap px-24 py-15 herobackground w-full">
+    <div className="flex flex-row content-center items-center justify-center gap-[32px] flex-wrap px-24 py-15 herobackground">
       <div className="flex flex-col items-start justify-center pl-[175px] flex-1">
         <Image
           src={"/assets/Delivery.png"}
@@ -115,7 +115,7 @@ const DeliverySection = () => {
           className="self-stretch object-cover ratio-[157/100]"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-[30px] pr-[175px]">
+      <div className="flex flex-col items-center justify-center gap-[30px]">
         <div className="flex flex-col items-center justify-center gap-[10px] px-[49px] py-[19px] border-[10px] border-solid border-b-purple-950">
           <p className="align-center text-subtitle">
             <span className="text-greyScaleText-title">We deliver to all</span>{" "}

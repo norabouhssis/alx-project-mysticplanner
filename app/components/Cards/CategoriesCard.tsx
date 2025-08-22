@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../Button";
+import { Button } from "../UI/Button";
 import { ChevronRight } from "lucide-react";
 
 type CategoriesCardrops = {
