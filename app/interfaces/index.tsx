@@ -152,3 +152,44 @@ export interface Product {
   };
   createdAt: string;
 }
+
+export type CartItem = {
+  productId: string;
+  title: string;
+  description: string;
+  price: number;
+  rating: number;
+  theme: Theme;
+  size: Size;
+  layout: Layout;
+  color: Color;
+  image: {
+    Image1: string;
+    Image2: string;
+    Image3: string;
+    Image4: string;
+  };
+  createdAt: string;
+  quantity: number;
+};
+
+export type CartItemCardProps = {
+  productId: string;
+  title: string;
+  description: string;
+  price: number;
+  rating: number;
+  theme: Theme;
+  size: Size;
+  layout: Layout;
+  color: Color;
+  image: {
+    Image1: string;
+    Image2: string;
+    Image3: string;
+    Image4: string;
+  };
+  createdAt: string;
+  quantity: number;
+};
+

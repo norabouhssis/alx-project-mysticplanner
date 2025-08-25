@@ -15,7 +15,6 @@ export function ProductDetails({ product }: { product: Product }) {
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
     "features"
   );
-
   const related: Product[] = [
     {
       id: "p1",
@@ -96,11 +95,10 @@ export function ProductDetails({ product }: { product: Product }) {
                   key={i}
                   onClick={() => setSelectedImage(src)}
                   className={`w-[117px] h-[110px] rounded-lg border-2 border-solid overflow-hidden cursor-pointer relative 
-              ${
-                selectedImage === src
-                  ? "border-primaryBorder-lighter"
-                  : "border-primaryBorder"
-              }`}
+              ${selectedImage === src
+                      ? "border-primaryBorder-lighter"
+                      : "border-primaryBorder"
+                    }`}
                 >
                   <Image
                     src={src}
@@ -179,9 +177,8 @@ export function ProductDetails({ product }: { product: Product }) {
                     >
                       <span
                         className={`shrink-0 rounded-[18px]
-              ${
-                selectedColor === c ? "w-[24px] h-[24px]" : "w-[18px] h-[18px]"
-              }`}
+              ${selectedColor === c ? "w-[24px] h-[24px]" : "w-[18px] h-[18px]"
+                          }`}
                         style={{ backgroundColor: c }}
                       />
                     </div>
@@ -253,36 +250,32 @@ export function ProductDetails({ product }: { product: Product }) {
           <nav className="flex items-center self-stretch gap-[42px] border-b-1 border-b-solid border-b-greyScaleBorder">
             <div
               onClick={() => setActiveTab("features")}
-              className={`flex justify-center items-start h-[41px] hover:border-b-3 hover:border-b-solid hover:border-b-primaryBorder-lighter ${
-                activeTab === "features"
-                  ? "border-b-3 border-b-solid border-b-primaryBorder"
-                  : ""
-              }`}
+              className={`flex justify-center items-start h-[41px] hover:border-b-3 hover:border-b-solid hover:border-b-primaryBorder-lighter ${activeTab === "features"
+                ? "border-b-3 border-b-solid border-b-primaryBorder"
+                : ""
+                }`}
             >
               <p
-                className={`text-bodyBold hover:text-primaryText-lighter ${
-                  activeTab === "features"
-                    ? "text-primaryText"
-                    : "text-greyScaleText-body"
-                }`}
+                className={`text-bodyBold hover:text-primaryText-lighter ${activeTab === "features"
+                  ? "text-primaryText"
+                  : "text-greyScaleText-body"
+                  }`}
               >
                 Features
               </p>
             </div>
             <div
               onClick={() => setActiveTab("reviews")}
-              className={`flex justify-center items-start h-[41px] hover:border-b-3 hover:border-b-solid hover:border-b-primaryBorder-lighter ${
-                activeTab === "reviews"
-                  ? "border-b-3 border-b-solid border-b-primaryBorder"
-                  : ""
-              }`}
+              className={`flex justify-center items-start h-[41px] hover:border-b-3 hover:border-b-solid hover:border-b-primaryBorder-lighter ${activeTab === "reviews"
+                ? "border-b-3 border-b-solid border-b-primaryBorder"
+                : ""
+                }`}
             >
               <p
-                className={`text-bodyBold hover:text-primaryText-lighter ${
-                  activeTab === "reviews"
-                    ? "text-primaryText"
-                    : "text-greyScaleText-body"
-                }`}
+                className={`text-bodyBold hover:text-primaryText-lighter ${activeTab === "reviews"
+                  ? "text-primaryText"
+                  : "text-greyScaleText-body"
+                  }`}
               >
                 Reviews
               </p>
@@ -310,11 +303,10 @@ export function ProductDetails({ product }: { product: Product }) {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-5 h-5 ${
-                          i < 4
-                            ? "fill-primarySurface"
-                            : "fill-greyScaleSurface"
-                        }`}
+                        className={`w-5 h-5 ${i < 4
+                          ? "fill-primarySurface"
+                          : "fill-greyScaleSurface"
+                          }`}
                       />
                     ))}
                   </div>
@@ -335,9 +327,8 @@ export function ProductDetails({ product }: { product: Product }) {
                         {Array.from({ length: 5 }, (_, j) => (
                           <Star
                             key={j}
-                            className={`w-4 h-4 ${
-                              j < stars ? "fill-primarySurface" : "fill-none"
-                            }`}
+                            className={`w-4 h-4 ${j < stars ? "fill-primarySurface" : "fill-none"
+                              }`}
                           />
                         ))}
                       </div>

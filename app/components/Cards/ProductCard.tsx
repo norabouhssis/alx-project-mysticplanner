@@ -4,8 +4,11 @@ import { Heart, ShoppingCart } from "lucide-react";
 import { Button } from "../UI/Button";
 import { RatingStars, toCurrencyMAD } from "./utils";
 import { Product } from "@/app/interfaces";
+import { useCart } from "@/app/context/CartContext";
 
 export function ProductCard({ product }: { product: Product }) {
+
+  const { addToCart } = useCart();
   return (
     <article className="group flex flex-col items-start shrink-0 w-[288px] h-[460px] min-w-[241px] p-[10px] gap-[5px] bg-greyScaleSurface rounded-lg boxshadow overflow-hidden">
       <div className="flex flex-col justify-center shrink-0 items-center self-stretch min-w-[185px] w-[268px] h-[297px] relative">
@@ -47,6 +50,22 @@ export function ProductCard({ product }: { product: Product }) {
             pill="true"
             iconPosition="alone"
             Icon={<ShoppingCart />}
+            onClick={() =>
+              addToCart({
+                productId: product.id,
+                title: product.title,
+                description: product.description,
+                price: product.price,
+                rating: product.rating,
+                theme: product.theme,
+                size: product.size,
+                layout: product.layout,
+                color: product.color,
+                image: product.image,
+                createdAt: product.createdAt,
+                quantity: 1,
+              })
+            }
           />
         </div>
       </div>

@@ -4,12 +4,12 @@ import { ChevronRight, MapPin, HeartIcon } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../components/UI/Button";
 import CategoriesCard from "../components/Cards/CategoriesCard";
-import Facebook from "../../assets/socialMedia/Facebook.svg";
-import FacebookHover from "../../assets/socialMedia/FacebookHover.svg";
-import Twitter from "../../assets/socialMedia/Twitter.svg";
-import Instagram from "../../assets/socialMedia/Instagram.svg";
-import TwitterHover from "../../assets/socialMedia/TwitterHover.svg";
-import InstagramHover from "../../assets/socialMedia/InstagramHover.svg";
+import Facebook from "../assets/socialMedia/Facebook.svg";
+import FacebookHover from "../assets/socialMedia/FacebookHover.svg";
+import Twitter from "../assets/socialMedia/Twitter.svg";
+import Instagram from "../assets/socialMedia/Instagram.svg";
+import TwitterHover from "../assets/socialMedia/TwitterHover.svg";
+import InstagramHover from "../assets/socialMedia/InstagramHover.svg";
 
 /* Hero section */
 const HeroSection = () => {

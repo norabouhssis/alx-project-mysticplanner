@@ -2,6 +2,7 @@ import "./styles/global.css";
 import type { Metadata } from "next";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
+import { CartProvider } from "./context/CartContext";
 
 export const metadata: Metadata = {
   title: "Mystic Planner",
@@ -15,11 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
-        <Header status="loggedIn" />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-      </body>
+      <CartProvider>
+        <body className="flex flex-col min-h-screen">
+          <Header status="loggedIn" />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </body>
+      </CartProvider>
     </html>
   );
 }
